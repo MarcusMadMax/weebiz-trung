@@ -23,6 +23,13 @@
 
   <!-- Fonts icons -->
   <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/font-awesome.min.css">
+  
+  <style>
+  .heading-title{
+    color: <?php echo get_theme_mod('heading_color', 'salmon');?> !important;
+  }
+  </style>
+  
   <?php wp_head()?>
 </head>
 
@@ -33,7 +40,11 @@
     <!-- Nav -->
     <nav class="navbar navbar-toggleable-sm navbar-light bg-black">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="img/logo-2.png" alt=""></a>
+        <a class="navbar-brand" href="index.html">
+          <?php 
+            $default_logo = get_template_directory_uri() . '/img/logo-2.png';
+          ?>
+          <img src="<?php echo get_theme_mod('logo', $default_logo)?>" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar4" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars"></i>
         </button>
